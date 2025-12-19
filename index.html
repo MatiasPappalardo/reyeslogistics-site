@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reyes Logistics: agencia de comercio exterior en Chile. Importaciones, exportaciones, logística internacional y asesoría aduanera." />
+  <title>Reyes Logistics | Comercio Exterior</title>
+  <style>
+    :root{
+      --bg:#f5f8fc;
+      --card:#ffffff;
+      --muted:#64748b;
+      --text:#0f172a;
+      --accent:#002d72;      /* navy */
+      --accent-2:#00a3e0;    /* blue */
+      --ring: rgba(37,99,235,.25);
+      --radius:18px;
+      --shadow: 0 14px 40px rgba(2,6,23,.12);
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 18px;
+      border:1px solid rgba(2,6,23,.10);
+      background: rgba(255,255,255,.82);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(2,6,23,.06);
+      position: sticky; top: 14px; z-index: 10;
+    }
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .logo{
+      width:38px; height:38px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 26px rgba(2,6,23,.10);
+    }
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks a{
+      text-decoration:none;
+      font-size: 14px;
+      color: rgba(15,23,42,.92);
+      padding:8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .navlinks a:hover{
+      border-color: rgba(2,6,23,.10);
+      background: rgba(0,163,224,.06);
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,.12);
+      background: #ffffff;
+      color: #0f172a;
+      text-decoration:none;
+      font-weight: 700;
+      cursor:pointer;
+      transition: transform .06s ease, background .2s ease, border-color .2s ease;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(0,163,224,.06); border-color: rgba(0,163,224,.35)}
+    .btn:active{transform: translateY(1px)}
+    .btn-primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 16px 34px rgba(0,45,114,.12);
+    }
+    .btn-primary:hover{filter: brightness(1.05)}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-top: 22px;
+    }
+    .card{
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(2,6,23,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+    .hero-left{padding: 26px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size: 13px;
+      color: #0b2a5b;
+      background: rgba(96,165,250,.10);
+      border: 1px solid rgba(96,165,250,.18);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+    .dot{width:8px; height:8px; border-radius:999px; background: var(--accent)}
+    h1{
+      margin: 14px 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+      letter-spacing:-.6px;
+    }
+    .lead{color: #334155; font-size: 16px; margin: 0 0 16px}
+    .highlights{display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 18px}
+    .pill{
+      font-size: 13px;
+      color: rgba(15,23,42,.92);
+      border: 1px solid rgba(2,6,23,.10);
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(2,6,23,.02);
+    }
+    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px}
+
+    .hero-right{padding: 0}
+    .panel{
+      padding: 22px;
+      background:
+        radial-gradient(700px 300px at 20% 0%, rgba(96,165,250,.30), transparent 55%),
+        radial-gradient(600px 280px at 95% 10%, rgba(34,197,94,.22), transparent 52%),
+        rgba(18,26,51,.75);
+    }
+    .mini{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .mini .box{
+      border: 1px solid rgba(148,163,184,.16);
+      border-radius: 14px;
+      padding: 14px;
+      background: rgba(11,16,32,.25);
+    }
+    .mini .num{font-size: 20px; font-weight: 800}
+    .mini .lbl{font-size: 13px; color: var(--muted)}
+
+    section{margin-top: 22px}
+    .section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; padding: 18px 22px}
+    .section-title h2{margin:0; font-size: 20px; letter-spacing: -.2px}
+    .section-title p{margin:0; color: var(--muted); font-size: 14px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      padding: 0 22px 22px;
+    }
+    .service{
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,.16);
+      background: rgba(11,16,32,.25);
+      min-height: 140px;
+    }
+    .service h3{margin: 0 0 6px; font-size: 16px}
+    .service p{margin: 0; color: rgba(230,234,242,.84); font-size: 14px}
+    .tag{
+      display:inline-flex; gap:8px; align-items:center;
+      margin-top: 12px;
+      font-size: 12px;
+      color: rgba(230,234,242,.88);
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(96,165,250,.18);
+      background: rgba(96,165,250,.10);
+    }
+
+    /* ===== Servicios: estética tipo Kuehne+Nagel (alto contraste, mucho blanco) ===== */
+    #servicios{background:#ffffff; border-color: rgba(2,6,23,.10)}
+    #servicios .section-title{
+      background: linear-gradient(90deg, rgba(0,163,224,.10), rgba(37,99,235,.06), transparent 70%);
+      border-bottom: 1px solid rgba(2,6,23,.08);
+    }
+    #servicios .section-title h2{color:#0b2a5b}
+    #servicios .section-title p{color:#475569}
+
+    #servicios .service{
+      background:#ffffff;
+      border:1px solid rgba(2,6,23,.10);
+      box-shadow: 0 10px 26px rgba(2,6,23,.06);
+      padding:18px;
+      transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    #servicios .service:hover{transform: translateY(-2px); border-color: rgba(0,163,224,.45); box-shadow: 0 16px 40px rgba(2,6,23,.10)}
+    #servicios .service h3{color:#0b1220; font-weight: 750}
+    #servicios .service p{color:#334155}
+
+    #servicios .tag{
+      color:#002d72;
+      border:1px solid rgba(0,163,224,.35);
+      background: rgba(0,163,224,.10);
+      font-weight: 700;
+    }
+
+    #servicios .svc-top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 10px}
+    #servicios .svc-ic{
+      width:42px; height:42px; border-radius: 999px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: rgba(0,163,224,.12);
+      border: 1px solid rgba(0,163,224,.25);
+      color:#002d72;
+      font-size: 18px;
+    }
+    #servicios .svc-pill{
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing:.2px;
+      color:#0b2a5b;
+      border: 1px solid rgba(2,6,23,.10);
+      background: rgba(2,6,23,.03);
+      padding: 7px 10px;
+      border-radius: 999px;
+    }
+    #servicios .svc-meta{margin-top: 12px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    #servicios .svc-link{
+      text-decoration:none;
+      font-weight: 800;
+      color:#0b2a5b;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,.10);
+      background: rgba(2,6,23,.02);
+    }
+    #servicios .svc-link:hover{border-color: rgba(0,163,224,.45); background: rgba(0,163,224,.06)}
+
+    /* Botones dentro de servicios más "enterprise" */
+    #servicios .btn{
+      background: #ffffff;
+      border-color: rgba(2,6,23,.12);
+      color: #0b1220;
+    }
+    #servicios .btn:hover{background: rgba(2,6,23,.02)}
+    #servicios .btn-primary{color:#fff}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      padding: 0 22px 22px;
+    }
+    .steps{padding: 18px; border: 1px solid rgba(2,6,23,.10); background: #ffffff; border-radius: 16px; box-shadow: 0 10px 26px rgba(2,6,23,.06)}
+    .steps ol{margin:0; padding-left: 18px; color: #0f172a}
+    .steps li{margin: 10px 0}
+    .steps span{color: var(--muted); font-size: 13px; display:block; margin-top: 3px}
+
+    .testimonials{padding: 0 22px 22px}
+    .quotes{display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px}
+    blockquote{
+      margin:0;
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(2,6,23,.10);
+      background: #ffffff;
+      box-shadow: 0 10px 26px rgba(2,6,23,.06);
+    }
+    blockquote p{margin:0 0 10px; color: #0f172a; font-size: 14px}
+    blockquote footer{color: var(--muted); font-size: 13px}
+
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 14px;
+      padding: 0 22px 22px;
+    }
+    .contact .info{padding: 18px; border: 1px solid rgba(2,6,23,.10); background: #ffffff; border-radius: 16px; box-shadow: 0 10px 26px rgba(2,6,23,.06)}
+    .contact .info h3{margin:0 0 8px}
+    .contact .info p{margin:0 0 12px; color: #334155; font-size: 14px}
+    .contact .info ul{margin:0; padding-left: 18px; color: #334155}
+    .contact .info li{margin: 8px 0}
+
+    form{
+      padding: 18px;
+      border: 1px solid rgba(2,6,23,.10);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(2,6,23,.06);
+    }
+    label{display:block; font-size: 13px; color: #0f172a; margin: 10px 0 6px}
+    input, textarea, select{
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(2,6,23,.14);
+      background: #ffffff;
+      color: #0f172a;
+      outline:none;
+    }
+    input:focus, textarea:focus, select:focus{box-shadow: 0 0 0 4px rgba(0,163,224,.20); border-color: rgba(0,163,224,.55)}
+    textarea{min-height: 110px; resize: vertical}
+    .row{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+    .help{font-size: 12px; color: var(--muted); margin-top: 8px}
+    .form-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px}
+
+    .footer{
+      margin-top: 22px;
+      padding: 18px 10px 40px;
+      color: rgba(15,23,42,.80);
+      font-size: 13px;
+      text-align:center;
+    }
+    .hr{height:1px; background: rgba(148,163,184,.14); margin: 18px 0}
+
+    /* WhatsApp floating button */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.95);
+      color: #061018;
+      text-decoration:none;
+      font-weight: 800;
+      box-shadow: 0 18px 40px rgba(0,0,0,.32);
+      border: 1px solid rgba(255,255,255,.25);
+    }
+    .wa-float small{font-weight:700; opacity:.85}
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .quotes{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      .row{grid-template-columns: 1fr}
+      .nav{border-radius: 18px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Replace with your real WhatsApp number in international format (Chile): 569XXXXXXXX -->
+  <!-- Example: https://wa.me/56912345678?text=Hola%20Reyes%20Logistics... -->
+  <a class="wa-float" href="https://wa.me/56900000000?text=Hola%20Reyes%20Logistics%2C%20quiero%20cotizar%20un%20servicio%20de%20comercio%20exterior." target="_blank" rel="noopener">
+    <span aria-hidden="true">💬</span>
+    <span>WhatsApp <small>Contacto</small></span>
+  </a>
+
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:14px; opacity:.92;">Reyes Logistics</div>
+          <div style="font-size:12px; color: var(--muted);">reyeslogistics.cl</div>
+        </div>
+      </div>
+      <nav class="navlinks" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto" class="btn btn-primary">Cotizar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" style="grid-template-columns:1fr">
+        <div class="card" style="padding:0; overflow:hidden">
+          <div style="position:relative">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=80" alt="Buque portacontenedores en puerto" style="width:100%; height:420px; object-fit:cover;" />
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.45) 0%, rgba(2,6,23,.30) 45%, rgba(2,6,23,.10) 100%)"></div>
+            <div style="position:absolute; inset:0; display:flex; align-items:center">
+              <div style="padding:32px; max-width:720px">
+                <div class="kicker" style="background:rgba(255,255,255,.15); color:#fff; border-color:rgba(255,255,255,.35)"><span class="dot"></span> Agencia de Comercio Exterior en Chile</div>
+                <h1 style="color:#fff; text-shadow:0 6px 20px rgba(0,0,0,.45)">Importaciones y exportaciones sin enredos: gestión clara, seguimiento y cumplimiento.</h1>
+                <p class="lead" style="color:rgba(255,255,255,.95)">
+                  En <strong>Reyes Logistics</strong> coordinamos tu operación de punta a punta: asesoría, documentación,
+                  logística internacional y gestión aduanera, con comunicación simple y trazabilidad real.
+                </p>
+                <div class="highlights">
+                  <span class="pill" style="background:rgba(255,255,255,.15); color:#fff">📦 Coordinación logística</span>
+                  <span class="pill" style="background:rgba(255,255,255,.15); color:#fff">🧾 Documentación y compliance</span>
+                  <span class="pill" style="background:rgba(255,255,255,.15); color:#fff">🚢 ✈️ 🚚 Multimodal</span>
+                  <span class="pill" style="background:rgba(255,255,255,.15); color:#fff">📍 Seguimiento</span>
+                </div>
+                <div class="cta">
+                  <a class="btn btn-primary" href="#contacto">Quiero una cotización</a>
+                  <a class="btn" style="background:rgba(255,255,255,.15); color:#fff; border-color:rgba(255,255,255,.4)" href="https://wa.me/56900000000?text=Hola%20Reyes%20Logistics%2C%20quiero%20cotizar%20un%20embarque." target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="servicios">
+        <div class="section-title">
+          <div>
+            <h2>Servicios</h2>
+            <p>Operación ordenada, documentación al día y seguimiento claro.</p>
+          </div>
+          <a class="btn btn-primary" href="#contacto">Cotizar ahora</a>
+        </div>
+
+        <div class="grid" style="padding-top:18px">
+          <article class="service" aria-label="Gestión de importaciones">
+            <div class="svc-top">
+              <span class="svc-ic" aria-hidden="true">📥</span>
+              <span class="svc-pill">Importación</span>
+            </div>
+            <h3>Gestión de importaciones</h3>
+            <p>Coordinación de proveedores, incoterms y documentación, con control de hitos hasta la entrega.</p>
+            <div class="svc-meta">
+              <span class="tag">Costos y plazos claros</span>
+              <a class="svc-link" href="#contacto">Solicitar propuesta →</a>
+            </div>
+          </article>
+
+          <article class="service" aria-label="Gestión de exportaciones">
+            <div class="svc-top">
+              <span class="svc-ic" aria-hidden="true">📤</span>
+              <span class="svc-pill">Exportación</span>
+            </div>
+            <h3>Gestión de exportaciones</h3>
+            <p>Preparación documental y coordinación logística para cumplir requisitos del mercado de destino.</p>
+            <div class="svc-meta">
+              <span class="tag">Trazabilidad y cumplimiento</span>
+              <a class="svc-link" href="#contacto">Solicitar propuesta →</a>
+            </div>
+          </article>
+
+          <article class="service" aria-label="Fletes internacionales">
+            <div class="svc-top">
+              <span class="svc-ic" aria-hidden="true">🚢</span>
+              <span class="svc-pill">Fletes</span>
+            </div>
+            <h3>Fletes internacionales</h3>
+            <p>Alternativas marítimas, aéreas o terrestres, con comparativo según urgencia, volumen y presupuesto.</p>
+            <div class="svc-meta">
+              <span class="tag">Optimización de ruta</span>
+              <a class="svc-link" href="#contacto">Solicitar propuesta →</a>
+            </div>
+          </article>
+
+          <article class="service" aria-label="Asesoría documental">
+            <div class="svc-top">
+              <span class="svc-ic" aria-hidden="true">🧾</span>
+              <span class="svc-pill">Documentos</span>
+            </div>
+            <h3>Asesoría documental</h3>
+            <p>Revisión de factura, packing list, BL/AWB, certificados y requisitos para evitar rechazos o retrasos.</p>
+            <div class="svc-meta">
+              <span class="tag">Checklist preventivo</span>
+              <a class="svc-link" href="#contacto">Solicitar revisión →</a>
+            </div>
+          </article>
+
+          <article class="service" aria-label="Coordinación con agentes">
+            <div class="svc-top">
+              <span class="svc-ic" aria-hidden="true">🤝</span>
+              <span class="svc-pill">Coordinación</span>
+            </div>
+            <h3>Coordinación con agentes</h3>
+            <p>Articulamos la comunicación con navieras, aerolíneas, depósitos y operadores, con un solo punto de contacto.</p>
+            <div class="svc-meta">
+              <span class="tag">Un responsable por embarque</span>
+              <a class="svc-link" href="#contacto">Iniciar coordinación →</a>
+            </div>
+          </article>
+
+          <article class="service" aria-label="Seguimiento y reportes">
+            <div class="svc-top">
+              <span class="svc-ic" aria-hidden="true">📍</span>
+              <span class="svc-pill">Tracking</span>
+            </div>
+            <h3>Seguimiento y reportes</h3>
+            <p>Actualizaciones por hitos: zarpe, arribo, retiro y entrega. Reporte simple para tu equipo.</p>
+            <div class="svc-meta">
+              <span class="tag">Transparencia operacional</span>
+              <a class="svc-link" href="#contacto">Pedir seguimiento →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="proceso">
+        <div class="section-title">
+          <div>
+            <h2>Cómo trabajamos</h2>
+            <p>Un proceso simple, con control en cada etapa.</p>
+          </div>
+          <a class="btn" href="https://wa.me/56900000000?text=Hola%20Reyes%20Logistics%2C%20me%20gustar%C3%ADa%20entender%20el%20proceso%20para%20mi%20operaci%C3%B3n." target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        </div>
+        <div class="split">
+          <div class="steps">
+            <ol>
+              <li>
+                <strong>Levantamiento de tu operación</strong>
+                <span>Origen/destino, tipo de carga, incoterm, tiempos y restricciones.</span>
+              </li>
+              <li>
+                <strong>Propuesta y planificación</strong>
+                <span>Ruta sugerida, estimación de plazos y principales hitos documentales.</span>
+              </li>
+              <li>
+                <strong>Ejecución y coordinación</strong>
+                <span>Gestión con actores involucrados y control preventivo de documentos.</span>
+              </li>
+              <li>
+                <strong>Seguimiento y cierre</strong>
+                <span>Actualización por hitos, entrega y retroalimentación para mejorar la próxima operación.</span>
+              </li>
+            </ol>
+          </div>
+          <div class="steps">
+            <h3 style="margin:0 0 10px;">Lo que vas a notar</h3>
+            <ul style="margin:0; padding-left: 18px; color: rgba(230,234,242,.88)">
+              <li style="margin: 10px 0;">Información clara (sin jerga innecesaria).</li>
+              <li style="margin: 10px 0;">Proactividad frente a riesgos y atrasos.</li>
+              <li style="margin: 10px 0;">Costos explicados antes de ejecutar.</li>
+              <li style="margin: 10px 0;">Un canal de comunicación ordenado.</li>
+            </ul>
+            <div class="hr"></div>
+            <a class="btn btn-primary" href="#contacto">Iniciar solicitud</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="testimonios">
+        <div class="section-title">
+          <div>
+            <h2>Testimonios</h2>
+            <p>Experiencias reales, en palabras simples.</p>
+          </div>
+          <a class="btn" href="#contacto">Quiero trabajar con ustedes</a>
+        </div>
+        <div class="testimonials">
+          <div class="quotes">
+            <blockquote>
+              <p>“Ordenaron la importación desde el primer día. Tuvimos claridad en los hitos y las actualizaciones fueron constantes.”</p>
+              <footer>Jefe de Operaciones, empresa de retail (Santiago)</footer>
+            </blockquote>
+            <blockquote>
+              <p>“Se notó el control documental. Evitamos observaciones y el proceso fue más rápido de lo que esperábamos.”</p>
+              <footer>Encargada de Compras, pyme industrial (Región Metropolitana)</footer>
+            </blockquote>
+            <blockquote>
+              <p>“Buena coordinación con proveedores y transporte. Lo más valioso fue tener un solo punto de contacto y respuestas claras.”</p>
+              <footer>Gerente de Administración, empresa de servicios (Chile)</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="contacto">
+        <div class="section-title">
+          <div>
+            <h2>Contacto y cotización</h2>
+            <p>Cuéntanos tu caso y te respondemos a la brevedad.</p>
+          </div>
+          <a class="btn" href="mailto:contacto@reyeslogistics.cl">contacto@reyeslogistics.cl</a>
+        </div>
+
+        <div class="contact">
+          <div class="info">
+            <h3>Datos útiles</h3>
+            <p>
+              Completa el formulario o escríbenos por WhatsApp. Si ya tienes documentos (factura, packing, datos del proveedor),
+              mejor aún: así cotizamos con más precisión.
+            </p>
+            <ul>
+              <li><strong>Horario:</strong> Lunes a viernes</li>
+              <li><strong>Cobertura:</strong> Operaciones desde/hacia Chile</li>
+              <li><strong>Canales:</strong> Email y WhatsApp</li>
+            </ul>
+            <div class="hr"></div>
+            <a class="btn" href="https://wa.me/56900000000?text=Hola%20Reyes%20Logistics%2C%20te%20comparto%20mi%20caso%20para%20cotizar." target="_blank" rel="noopener">Abrir WhatsApp</a>
+          </div>
+
+          <!-- Basic front-end form. Replace action with your backend endpoint or form service. -->
+          <form id="quoteForm" action="#" method="post" novalidate>
+            <div class="row">
+              <div>
+                <label for="name">Nombre y apellido</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Ej: Camila González" required />
+              </div>
+              <div>
+                <label for="company">Empresa</label>
+                <input id="company" name="company" autocomplete="organization" placeholder="Ej: Comercial ABC SpA" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="ejemplo@empresa.cl" required />
+              </div>
+              <div>
+                <label for="phone">Teléfono</label>
+                <input id="phone" name="phone" autocomplete="tel" placeholder="+56 9 XXXX XXXX" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="type">Tipo de operación</label>
+                <select id="type" name="type" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option>Importación</option>
+                  <option>Exportación</option>
+                  <option>Flete internacional</option>
+                  <option>Asesoría documental</option>
+                </select>
+              </div>
+              <div>
+                <label for="route">Origen / Destino</label>
+                <input id="route" name="route" placeholder="Ej: Shanghai → San Antonio" required />
+              </div>
+            </div>
+
+            <label for="message">Detalle de tu solicitud</label>
+            <textarea id="message" name="message" placeholder="Tipo de carga, volumen/peso estimado, incoterm, fechas, y cualquier requisito especial." required></textarea>
+
+            <div class="help">Al enviar este formulario aceptas ser contactado/a para coordinar la cotización.</div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+              <button class="btn" type="button" id="sendWhatsApp">Enviar por WhatsApp</button>
+            </div>
+
+            <div id="formStatus" class="help" aria-live="polite" style="margin-top:10px;"></div>
+          </form>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div style="opacity:.9"><strong>Reyes Logistics</strong> · Comercio Exterior · Chile</div>
+        <div style="margin-top:6px; color: var(--muted);">© <span id="year"></span> reyeslogistics.cl · Todos los derechos reservados</div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Simple front-end validation + WhatsApp prefill
+    const form = document.getElementById('quoteForm');
+    const statusEl = document.getElementById('formStatus');
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = String(new Date().getFullYear());
+
+    function getVal(id){
+      const el = document.getElementById(id);
+      return (el?.value || '').trim();
+    }
+
+    function buildWhatsAppText(){
+      const name = getVal('name');
+      const company = getVal('company');
+      const email = getVal('email');
+      const phone = getVal('phone');
+      const type = getVal('type');
+      const route = getVal('route');
+      const message = getVal('message');
+
+      const lines = [
+        'Hola Reyes Logistics, quiero cotizar:',
+        `- Nombre: ${name || 'N/A'}`,
+        `- Empresa: ${company || 'N/A'}`,
+        `- Email: ${email || 'N/A'}`,
+        `- Teléfono: ${phone || 'N/A'}`,
+        `- Tipo: ${type || 'N/A'}`,
+        `- Origen/Destino: ${route || 'N/A'}`,
+        `- Detalle: ${message || 'N/A'}`
+      ];
+      return lines.join('\n');
+    }
+
+    document.getElementById('sendWhatsApp').addEventListener('click', () => {
+      const text = encodeURIComponent(buildWhatsAppText());
+      const number = '56900000000'; // TODO: reemplazar por tu número real
+      window.open(`https://wa.me/${number}?text=${text}`, '_blank', 'noopener');
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      statusEl.textContent = '';
+
+      // Basic required checks
+      const requiredIds = ['name','email','type','route','message'];
+      let ok = true;
+      for (const id of requiredIds){
+        const el = document.getElementById(id);
+        if (!el.value.trim()){
+          ok = false;
+          el.focus();
+          statusEl.textContent = 'Por favor completa los campos obligatorios.';
+          break;
+        }
+      }
+      if (!ok) return;
+
+      // This demo does not send data anywhere.
+      // Replace with fetch() to your backend endpoint or a form service.
+      statusEl.textContent = 'Solicitud lista. Conecta este formulario a tu backend (o servicio de formularios) para recibir los datos.';
+    });
+  </script>
+</body>
+</html>

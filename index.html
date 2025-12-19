@@ -356,6 +356,15 @@
       .row{grid-template-columns: 1fr}
       .nav{border-radius: 18px}
     }
+    /* Mobile header: keep normal flow, avoid sticky/fixed overlays */
+    @media (max-width: 768px){
+      .nav{
+        position: static !important;
+        top: auto;
+        z-index: auto;
+        margin-top: 0;
+      }
+    }
   </style>
 </head>
 <body>

@@ -54,6 +54,10 @@
       border-radius: 999px;
       border: 1px solid transparent;
     }
+    .nav-toggle{display:none; background:none; border:none; padding:8px; border-radius:12px; cursor:pointer}
+    .nav-toggle:focus-visible{outline:2px solid rgba(0,163,224,.6)}
+    .nav-toggle-bars{display:grid; gap:4px}
+    .nav-toggle-bars span{display:block; width:18px; height:2px; background:#0f172a; border-radius:999px}
     .navlinks a:hover{
       border-color: rgba(2,6,23,.10);
       background: rgba(0,163,224,.06);
@@ -356,30 +360,55 @@
       .row{grid-template-columns: 1fr}
       .nav{border-radius: 18px}
     }
-    /* Mobile header: keep normal flow and stack items to avoid overlap/desorden */
+    /* Mobile header: ajustes exclusivos mobile (<=768px) para mantener flujo y ordenar menú */
     @media (max-width: 768px){
       .nav{
         position: static !important;
         top: auto;
         z-index: auto;
         margin-top: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 10px;
-        padding: 14px 16px;
+        padding: 12px 14px;
       }
       .navlinks{
+        display: none;
         width: 100%;
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
+        gap: 10px;
+        background: #ffffff;
+        border: 1px solid rgba(2,6,23,.08);
+        border-radius: 14px;
+        padding: 12px;
+        margin-top: 8px;
       }
+      .navlinks.is-open{display:flex;}
       .navlinks a{
-        width: auto;
+        width: 100%;
+      }
+      .navlinks .btn{
+        width: 100%;
+        justify-content: center;
       }
       .brand{
-        width: 100%;
+        width: auto;
+      }
+      .nav-toggle{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background: rgba(2,6,23,.04);
+        border: 1px solid rgba(2,6,23,.12);
+      }
+      .navlinks a:not(.btn){
+        padding: 10px 8px;
+        border-radius: 10px;
+      }
+      .navlinks a:not(.btn):hover{
+        background: rgba(0,163,224,.06);
       }
     }
   </style>
@@ -402,7 +431,13 @@
           <div style="font-size:12px; color: var(--muted);">reyeslogistics.cl</div>
         </div>
       </div>
-      <nav class="navlinks" aria-label="Navegación principal">
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="sr-only">Abrir menú</span>
+        <span class="nav-toggle-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+      <nav class="navlinks" id="primaryNav" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#testimonios">Testimonios</a>
@@ -748,6 +783,36 @@
       // This demo does not send data anywhere.
       // Replace with fetch() to your backend endpoint or a form service.
       statusEl.textContent = 'Solicitud lista. Conecta este formulario a tu backend (o servicio de formularios) para recibir los datos.';
+    });
+
+    // Mobile nav toggle (solo mobile; desktop intacto)
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('primaryNav');
+
+    function closeNav(){
+      if (!navLinks) return;
+      navLinks.classList.remove('is-open');
+      navToggle?.setAttribute('aria-expanded','false');
+    }
+
+    navToggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!navLinks) return;
+      const open = navLinks.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Cierra al hacer click fuera
+    document.addEventListener('click', (e) => {
+      if (!navLinks || !navToggle) return;
+      if (!navLinks.contains(e.target) && !navToggle.contains(e.target)){
+        closeNav();
+      }
+    });
+
+    // Cierra al seleccionar opción
+    navLinks?.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => closeNav());
     });
   </script>
 </body>

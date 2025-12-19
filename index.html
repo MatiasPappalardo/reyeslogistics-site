@@ -356,13 +356,30 @@
       .row{grid-template-columns: 1fr}
       .nav{border-radius: 18px}
     }
-    /* Mobile header: keep normal flow, avoid sticky/fixed overlays */
+    /* Mobile header: keep normal flow and stack items to avoid overlap/desorden */
     @media (max-width: 768px){
       .nav{
         position: static !important;
         top: auto;
         z-index: auto;
         margin-top: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 14px 16px;
+      }
+      .navlinks{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .navlinks a{
+        width: auto;
+      }
+      .brand{
+        width: 100%;
       }
     }
   </style>

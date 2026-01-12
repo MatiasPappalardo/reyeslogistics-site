@@ -39,14 +39,15 @@
       box-shadow: 0 10px 30px rgba(2,6,23,.06);
       position: sticky; top: 14px; z-index: 10;
     }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
+    .brand-text{display:flex; flex-direction:column; line-height:1.05}
+    .brand-title{font-size:13px; font-weight:800; letter-spacing:.7px; text-transform:uppercase; color: var(--text)}
+    .brand-subtitle{font-size:11px; font-weight:600; letter-spacing:.4px; text-transform:uppercase; color: var(--muted)}
     .logo{
-      width:38px; height:38px; border-radius: 10px;
+      width:52px; height:52px; border-radius: 6px;
       display:block;
       object-fit: contain;
       background: #ffffff;
-      border: 1px solid rgba(2,6,23,.12);
-      box-shadow: 0 8px 18px rgba(2,6,23,.12);
     }
     .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .navlinks a{
@@ -429,9 +430,9 @@
     <header class="nav">
       <div class="brand">
         <img class="logo" src="logo_reyes.png" alt="Reyes Logistics" />
-        <div>
-          <div style="font-size:14px; opacity:.92;">Reyes Logistics</div>
-          <div style="font-size:12px; color: var(--muted);">reyeslogistics.cl</div>
+        <div class="brand-text">
+          <div class="brand-title">Reyes Logistics</div>
+          <div class="brand-subtitle">reyeslogistics.cl</div>
         </div>
       </div>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav">

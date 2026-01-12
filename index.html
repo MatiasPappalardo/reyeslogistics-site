@@ -41,9 +41,12 @@
     }
     .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px}
     .logo{
-      width:38px; height:38px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 10px 26px rgba(2,6,23,.10);
+      width:38px; height:38px; border-radius: 10px;
+      display:block;
+      object-fit: contain;
+      background: #ffffff;
+      border: 1px solid rgba(2,6,23,.12);
+      box-shadow: 0 8px 18px rgba(2,6,23,.12);
     }
     .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .navlinks a{
@@ -425,7 +428,7 @@
   <div class="wrap">
     <header class="nav">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <img class="logo" src="logo_reyes.png" alt="Reyes Logistics" />
         <div>
           <div style="font-size:14px; opacity:.92;">Reyes Logistics</div>
           <div style="font-size:12px; color: var(--muted);">reyeslogistics.cl</div>

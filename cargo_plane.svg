@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Avion de carga en vuelo">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#eef2f6"/>
+      <stop offset="100%" stop-color="#cfd8e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <g transform="translate(160,360) rotate(-4 600 150)" fill="#2f3a44">
+    <rect x="0" y="80" width="980" height="120" rx="60"/>
+    <rect x="820" y="20" width="220" height="80" rx="40"/>
+    <rect x="880" y="-40" width="140" height="80" rx="20"/>
+    <polygon points="260,200 520,200 700,320 420,320"/>
+    <polygon points="200,80 440,80 360,0 220,0"/>
+    <rect x="60" y="112" width="80" height="36" rx="18" fill="#f2f3f5"/>
+  </g>
+  <g opacity="0.25">
+    <path d="M0 700 C 300 640 600 720 900 680 C 1200 640 1400 700 1600 660 L1600 900 L0 900 Z" fill="#b8c3cf"/>
+  </g>
+</svg>

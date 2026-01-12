@@ -267,11 +267,15 @@
         "media-a content-a"
         "content-b media-b";
     }
-    .customs-media{min-height: 260px}
+    .customs-media{min-height: 320px}
     .customs-media img{width:100%; height:100%; object-fit:cover; display:block}
     .customs-content{
       padding: 34px 36px;
       background: #f7f5f3;
+      min-height: 320px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
     .customs-content.alt{background:#f2f3f5}
     .customs-title{
@@ -427,6 +431,8 @@
           "content-b";
       }
       .customs-content{padding: 26px}
+      .customs-media,
+      .customs-content{min-height: 240px}
       .split{grid-template-columns: 1fr}
       .quotes{grid-template-columns: 1fr}
       .contact{grid-template-columns: 1fr}
@@ -676,7 +682,7 @@
             </div>
           </div>
           <div class="customs-media b">
-            <img src="port_workers.jpg" alt="Trabajadores en puerto con gruas" />
+            <img src="port_cranes.jpg" alt="Puerto con gruas y contenedores" />
           </div>
         </div>
       </section>

@@ -7,13 +7,13 @@
   <title>Reyes Logistics | Comercio Exterior</title>
   <style>
     :root{
-      --bg:#f5f8fc;
+      --bg:#f2f3f5;
       --card:#ffffff;
-      --muted:#64748b;
-      --text:#0f172a;
-      --accent:#002d72;      /* navy */
-      --accent-2:#00a3e0;    /* blue */
-      --ring: rgba(37,99,235,.25);
+      --muted:#6b7280;
+      --text:#1f2933;
+      --accent:#e30a17;      /* turkish red */
+      --accent-2:#b80b16;    /* deep red */
+      --ring: rgba(227,10,23,.25);
       --radius:18px;
       --shadow: 0 14px 40px rgba(2,6,23,.12);
       --max: 1100px;
@@ -23,7 +23,7 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
-      background: linear-gradient(180deg, #f8fbff 0%, #eef3fb 100%);
+      background: linear-gradient(180deg, #fff7f7 0%, #f2f3f5 100%);
       line-height:1.45;
     }
     a{color:inherit}
@@ -55,12 +55,12 @@
       border: 1px solid transparent;
     }
     .nav-toggle{display:none; background:none; border:none; padding:8px; border-radius:12px; cursor:pointer}
-    .nav-toggle:focus-visible{outline:2px solid rgba(0,163,224,.6)}
+    .nav-toggle:focus-visible{outline:2px solid rgba(227,10,23,.6)}
     .nav-toggle-bars{display:grid; gap:4px}
     .nav-toggle-bars span{display:block; width:18px; height:2px; background:#0f172a; border-radius:999px}
     .navlinks a:hover{
       border-color: rgba(2,6,23,.10);
-      background: rgba(0,163,224,.06);
+      background: rgba(227,10,23,.06);
     }
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -75,13 +75,13 @@
       transition: transform .06s ease, background .2s ease, border-color .2s ease;
       user-select:none;
     }
-    .btn:hover{background: rgba(0,163,224,.06); border-color: rgba(0,163,224,.35)}
+    .btn:hover{background: rgba(227,10,23,.06); border-color: rgba(227,10,23,.35)}
     .btn:active{transform: translateY(1px)}
     .btn-primary{
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       border-color: transparent;
       color: #ffffff;
-      box-shadow: 0 16px 34px rgba(0,45,114,.12);
+      box-shadow: 0 16px 34px rgba(227,10,23,.18);
     }
     .btn-primary:hover{filter: brightness(1.05)}
     .hero{
@@ -103,9 +103,9 @@
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
       font-size: 13px;
-      color: #0b2a5b;
-      background: rgba(96,165,250,.10);
-      border: 1px solid rgba(96,165,250,.18);
+      color: #7a0f15;
+      background: rgba(227,10,23,.10);
+      border: 1px solid rgba(227,10,23,.18);
       padding: 8px 12px;
       border-radius: 999px;
     }
@@ -132,9 +132,9 @@
     .panel{
       padding: 22px;
       background:
-        radial-gradient(700px 300px at 20% 0%, rgba(96,165,250,.30), transparent 55%),
-        radial-gradient(600px 280px at 95% 10%, rgba(34,197,94,.22), transparent 52%),
-        rgba(18,26,51,.75);
+        radial-gradient(700px 300px at 20% 0%, rgba(227,10,23,.28), transparent 55%),
+        radial-gradient(600px 280px at 95% 10%, rgba(107,114,128,.22), transparent 52%),
+        rgba(18,18,20,.85);
     }
     .mini{
       display:grid;
@@ -178,18 +178,18 @@
       color: rgba(230,234,242,.88);
       padding: 7px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(96,165,250,.18);
-      background: rgba(96,165,250,.10);
+      border: 1px solid rgba(227,10,23,.18);
+      background: rgba(227,10,23,.10);
     }
 
     /* ===== Servicios: estética tipo Kuehne+Nagel (alto contraste, mucho blanco) ===== */
     #servicios{background:#ffffff; border-color: rgba(2,6,23,.10)}
     #servicios .section-title{
-      background: linear-gradient(90deg, rgba(0,163,224,.10), rgba(37,99,235,.06), transparent 70%);
+      background: linear-gradient(90deg, rgba(227,10,23,.10), rgba(107,114,128,.06), transparent 70%);
       border-bottom: 1px solid rgba(2,6,23,.08);
     }
-    #servicios .section-title h2{color:#0b2a5b}
-    #servicios .section-title p{color:#475569}
+    #servicios .section-title h2{color:#7a0f15}
+    #servicios .section-title p{color:#5b6067}
 
     #servicios .service{
       background:#ffffff;
@@ -198,14 +198,14 @@
       padding:18px;
       transition: transform .12s ease, box-shadow .2s ease, border-color .2s ease;
     }
-    #servicios .service:hover{transform: translateY(-2px); border-color: rgba(0,163,224,.45); box-shadow: 0 16px 40px rgba(2,6,23,.10)}
+    #servicios .service:hover{transform: translateY(-2px); border-color: rgba(227,10,23,.45); box-shadow: 0 16px 40px rgba(2,6,23,.10)}
     #servicios .service h3{color:#0b1220; font-weight: 750}
     #servicios .service p{color:#334155}
 
     #servicios .tag{
-      color:#002d72;
-      border:1px solid rgba(0,163,224,.35);
-      background: rgba(0,163,224,.10);
+      color:#7a0f15;
+      border:1px solid rgba(227,10,23,.35);
+      background: rgba(227,10,23,.10);
       font-weight: 700;
     }
 
@@ -213,16 +213,16 @@
     #servicios .svc-ic{
       width:42px; height:42px; border-radius: 999px;
       display:inline-flex; align-items:center; justify-content:center;
-      background: rgba(0,163,224,.12);
-      border: 1px solid rgba(0,163,224,.25);
-      color:#002d72;
+      background: rgba(227,10,23,.12);
+      border: 1px solid rgba(227,10,23,.25);
+      color:#7a0f15;
       font-size: 18px;
     }
     #servicios .svc-pill{
       font-size: 12px;
       font-weight: 800;
       letter-spacing:.2px;
-      color:#0b2a5b;
+      color:#7a0f15;
       border: 1px solid rgba(2,6,23,.10);
       background: rgba(2,6,23,.03);
       padding: 7px 10px;
@@ -232,13 +232,13 @@
     #servicios .svc-link{
       text-decoration:none;
       font-weight: 800;
-      color:#0b2a5b;
+      color:#7a0f15;
       padding: 8px 10px;
       border-radius: 999px;
       border: 1px solid rgba(2,6,23,.10);
       background: rgba(2,6,23,.02);
     }
-    #servicios .svc-link:hover{border-color: rgba(0,163,224,.45); background: rgba(0,163,224,.06)}
+    #servicios .svc-link:hover{border-color: rgba(227,10,23,.45); background: rgba(227,10,23,.06)}
 
     /* Botones dentro de servicios más "enterprise" */
     #servicios .btn{
@@ -302,7 +302,7 @@
       color: #0f172a;
       outline:none;
     }
-    input:focus, textarea:focus, select:focus{box-shadow: 0 0 0 4px rgba(0,163,224,.20); border-color: rgba(0,163,224,.55)}
+    input:focus, textarea:focus, select:focus{box-shadow: 0 0 0 4px rgba(227,10,23,.20); border-color: rgba(227,10,23,.55)}
     textarea{min-height: 110px; resize: vertical}
     .row{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
     .help{font-size: 12px; color: var(--muted); margin-top: 8px}
@@ -408,7 +408,7 @@
         border-radius: 10px;
       }
       .navlinks a:not(.btn):hover{
-        background: rgba(0,163,224,.06);
+        background: rgba(227,10,23,.06);
       }
     }
   </style>
